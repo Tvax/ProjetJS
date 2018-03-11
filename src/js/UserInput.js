@@ -40,7 +40,8 @@ class UserInput extends Component {
       newArray.push({
         name: myJson[0].username,
         followers: myJson[0].followers_count,
-        avatar: myJson[0].avatar
+        avatar: myJson[0].avatar,
+        url: myJson[0].url
       });
 
       that.setState({title: myJson[0].username + " added"})
@@ -94,7 +95,7 @@ class UserInput extends Component {
   generateLayout(user, i){
     return <tr>
     <th scope="row" class="text-center align-middle">{i}</th>
-    <td class="text-center align-middle"><img src={user.avatar}/></td>
+    <td class="text-center align-middle"><a href={user.url}><img src={user.avatar}/></a></td>
     <td class="text-center align-middle">{user.name}</td>
     <td class="text-center align-middle">{user.followers}</td>
     <td class="text-center align-middle"><button type="submit" value="Remove User" class="btn btn-info" onClick={() => this.rmFromList(user.name)}>Remove User</button></td>
