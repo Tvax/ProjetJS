@@ -3,8 +3,8 @@ import '../css/App.css';
 import 'whatwg-fetch'
 
 class UserList extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       //nom de l'utilisateur rentre
@@ -121,7 +121,7 @@ class UserList extends Component {
       <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
       <li class="nav-item margin-left">
-      <input type="text" class="form-control" value={this.state.word} onChange={(event) =>this.handleChange(event.target.value)}/>
+      <input type="text" class="form-control" value={this.state.word} onChange={(event)=>this.handleChange(event.target.value)}/>
       </li>
       <li class="nav-item margin-left">
       <button type="submit" class="btn btn-info" onClick={() => this.addToList(this.state.word)}>Add User</button>
